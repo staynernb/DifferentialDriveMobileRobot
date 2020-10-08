@@ -17,6 +17,7 @@ tau_r = 1
 tau_l = 0
 t = np.linspace(0, 5, 101)
 
+# Equação diferencial que representa o sistema do robô móvel com tração diferencial.
 def newton(y, t, tau_r, tau_l):
   v_u, w = y
   dydt = [d * w ** 2 + (tau_r + tau_l)/(M*R), -M * d * v_u * w / (M * d ** 2 + J) + L*(tau_r - tau_l)/R]
